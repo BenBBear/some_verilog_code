@@ -1,7 +1,7 @@
 
 
 set link_library {"*"}
-set target_library  {"tc6a_cbacore.db"}
+set target_library  {"/home/tool/libraries/SAED3228nm_EDK/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db"}
 define_design_lib WORK -path ./WORK
 
 saif_map -start
