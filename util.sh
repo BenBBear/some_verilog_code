@@ -44,6 +44,19 @@ function split_zip_saif(){
 }
 
 
+function split_saif_for_power_measurement(){
+    local OLD_DIR=`pwd`
+    mkdir -p $DC_DEST
+    rm -rf $DC_DEST/*
+    cd  $DC_DEST
+    for ad in "${SIM_ADDERS[@]}"
+      do
+        mkdir -p $ad
+        cp $SIM_DEST/*adder-$ad,cid-*  $ad/
+      done
+    cd $OLD_DIR
+}
+
 
 function just_filename(){
 	local filename=$(basename $1)
@@ -62,7 +75,3 @@ function send_file_to_g1(){
 function login_to_g1(){
 	ssh -X g1@dfm.ucsd.edu
 }
-
-
-
-

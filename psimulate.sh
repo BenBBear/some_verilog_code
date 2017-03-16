@@ -53,7 +53,7 @@ function pmain(){
             if [ "$current_setup" -ge "$setup_num" ]; then
                 break
             fi
-            ( main  ${SIM_setups[$current_setup]}) >/dev/null &  
+            ( main  ${SIM_setups[$current_setup]}) >/dev/null &
             ((current_setup++))
         done
         wait
@@ -73,8 +73,7 @@ function run_simulations(){
     pmain
     cd ${org_home}
     local dur=$(echo "$(date +%s.%N) - $start" | bc)
-    zipsaif
-    split_zip_saif
+    # zipsaif
+    # split_zip_saif
     printf "Execution time: %.6f seconds" ${dur}
-
 }

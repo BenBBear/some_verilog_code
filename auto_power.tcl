@@ -1,5 +1,5 @@
 set link_library {"*"}
-set target_library  {"tc6a_cbacore.db"}
+set target_library  {"/home/tool/libraries/SAED3228nm_EDK/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db"}
 define_design_lib WORK -path ./WORK
 
 
@@ -29,7 +29,7 @@ read_verilog ../Main.v
 current_design Main
 create_clock clock -p 10
 link
-saif_map -start 
+saif_map -start
 report_clock
 compile
 #######################################
@@ -37,16 +37,12 @@ set saiffiles [glob ../../adder/*.saif] # KEY:IADDER_FOLDER
 reset_switching_activity
 
 foreach f $saiffiles {
-   puts -nonewline "Analyzing $f ... " 
-   read_saif -input  $f  -instance_name test_Main_Real/main 
+   puts -nonewline "Analyzing $f ... "
+   read_saif -input  $f  -instance_name test_Main_Real/main
    set fbasename [file rootname [file tail $f]]
-   report_power > ../../reports/$fbasename.txt 
+   report_power > ../../reports/$fbasename.txt
    puts "Finished"
 }
 
 
 exit
-
-
-
-
