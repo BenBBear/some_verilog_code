@@ -39,7 +39,7 @@ SIM_CRITICAL_NUM=(1 441)
 ############### Advance Parameter Setup ###############
 
 ## specify all parameters by hand
-SIM_ADVANCED_SETUPS=("4B 2 1" "4B 4 41")
+SIM_ADVANCED_SETUPS=("4B 2 1")
 
 
 ############### Conclusion ###############
